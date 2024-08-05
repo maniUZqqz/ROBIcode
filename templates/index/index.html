@@ -1,0 +1,700 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    روبیکد
+{% endblock %}
+
+{% block link %}
+
+    <link rel="stylesheet" href="../../static/css/index.css">
+    <link rel="stylesheet" href="../../static/css/baner.css">
+    <script src="../../static/js/index.js"></script>
+    <style>
+        * {box-sizing: border-box}
+        body {font-family: Verdana, sans-serif; margin:0}
+        .mySlides {display: none}
+        img {vertical-align: middle;}
+
+        .academyit1 {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 50%;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        .academyit3{
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+        .academyit2 {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        .active, .dot:hover { background-color: #717171; }
+        .fade { animation-name: fade; animation-duration: 1.5s; }
+        @-webkit-keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+        @media only screen and (max-width: 300px) {
+            .prev, .next,.academyit3{font-size: 11px}
+        }
+      .frame-32 {
+          position: absolute;
+          width: 1320px;
+          height: 95px;
+          left: 56px;
+          background-color: #2a8ce7;
+          border-radius: 15px;
+          font-size: 30px;
+          transition: height 0.5s ease-in-out, top 0.5s ease-in-out;
+          overflow: hidden;
+      }
+      .frame-32.expanded {
+          height: 285px; /* Three times the original height */
+      }
+      .user {
+          direction: rtl;
+          margin: 0px;
+      }
+      .user_said {
+          display: none;
+      }
+      .frame-32.expanded .user_said {
+          display: block;
+      }
+  </style>
+    
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="screen">
+      <div class="div">
+          <div class="frame">
+    <div class="academyit1">
+        <div class="mySlides fade">
+            <!-- <div class="academyit2">1 / 3</div> -->
+            <img src="{% static 'img/baner1.jpg' %}" style="width:100%">
+            <!-- <div class="text">Caption 1</div> -->
+        </div>
+        <div class="mySlides fade">
+            <!-- <div class="academyit2">2 / 3</div> -->
+            <img src="{% static 'img/baner2.jpg' %}" style="width:100%">
+            <!-- <div class="text">Caption 2</div> -->
+        </div>
+        <div class="mySlides fade">
+            <!-- <div class="academyit2">3 / 3</div> -->
+            <img src="{% static 'img/baner3.jpg' %}" style="width:100%">
+            <!-- <div class="text">Caption 3</div> -->
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <div style="text-align: center">
+        <script>
+            var slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {slideIndex = 1}
+                slides[slideIndex-1].style.display = "block";
+                setTimeout(showSlides, 3000); // Change image every 3 seconds
+            }
+
+            function plusSlides(n) {
+                clearTimeout(timeout); // Stop the automatic sliding when a manual change is made
+                slideIndex += n - 1;
+                if (slideIndex < 0) {
+                    slideIndex = slides.length - 1;
+                } else if (slideIndex >= slides.length) {
+                    slideIndex = 0;
+                }
+                showSlides();
+            }
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            function plusSlides(n) {
+showSlides(slideIndex += n);
+}
+            function currentSlide(n) {
+showSlides(slideIndex = n);
+}
+            function showSlides(n) {
+var i;
+var slides = document.getElementsByClassName("mySlides");
+var dots = document.getElementsByClassName("dot");
+if (n > slides.length) {slideIndex = 1}
+if (n < 1) {slideIndex = slides.length}
+for (i = 0; i < slides.length; i++) {
+slides[i].style.display = "none";
+}
+for (i = 0; i < dots.length; i++) {
+dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex-1].style.display = "block";
+dots[slideIndex-1].className += " active";
+}
+        </script>
+    </div>
+    <script src="script.js"></script>
+</div>
+
+{#         <div class="frame-4"></div> #}
+{#         <div class="frame-5"></div> #}
+{#        <div class="frame-6"></div> #}
+{#         <div class="frame-7"></div>#}
+<!-- _________________________________________________________________________________________________________________ -->
+<!-- <مدرسین> -->
+<div class="wrapper">
+  <div class="container">
+    <input type="radio" name="slide" id="c1" checked>
+    <label for="c1" class="card">
+      <div class="row">
+        <div class="icon">1</div>
+        <div class="description">
+          <h4>amirmohammad</h4>
+          <p>front_end developer</p>
+        </div>
+      </div>
+    </label>
+
+    <input type="radio" name="slide" id="c2">
+    <label for="c2" class="card">
+      <div class="row">
+        <div class="icon">2</div>
+        <div class="description">
+          <h4>sid</h4>
+          <p>designer</p>
+        </div>
+      </div>
+    </label>
+
+    <input type="radio" name="slide" id="c3">
+    <label for="c3" class="card">
+      <div class="row">
+        <div class="icon">3</div>
+        <div class="description">
+          <h4>mani</h4>
+          <p>back_end developer</p>
+        </div>
+      </div>
+    </label>
+
+    <input type="radio" name="slide" id="c4">
+    <label for="c4" class="card">
+      <div class="row">
+        <div class="icon">4</div>
+        <div class="description">
+          <h4>parsa</h4>
+          <p>data base developer</p>
+        </div>
+      </div>
+    </label>
+  </div>
+</div>
+<!-- </مدرسین> -->
+<!-- _______________________________________________ -->
+       
+<!-- ___________________________________________________ -->
+        <!-- از اینجا بخشه دوره ها شروع میشه -->
+        <div class="frame-8">
+          <a href="./dore_d-jango/dore_jango.html">
+            <div class="frame-9">
+              <img src="./img/jango.jpg" alt="Php" class="frame-9" id="course_1">
+            </div>
+          </a>
+          <p class="text-wrapper">فرم ورک جنگو یکی از بهترن فرم ورک ها بری طرایحی وب است که ....</p>
+          <div class="text-wrapper-2">70 جلسه</div>
+          <div class="text-wrapper-3">50ساعت</div>
+          <div class="text-wrapper-4">مانی اکبری مدرس</div>
+          <div class="frame-10">
+            
+              <p class="price_of_course">رایگان</p>
+            
+          </div>
+          <div class="frame-11">
+          <a href="./dore_d-jango/dore_jango.html">
+            <p class="vorod_be_jalase">ورود به جلسه</p>
+          </a>
+          </div>
+          <div class="text-wrapper-5">دوره جامع Django</div>
+        </div>
+        <div class="frame-12">
+          <a href="dore_html/html-css.html">
+            <div class="frame-9">
+              <img src="./img/html_css.jpeg" alt="html_css" class="frame-9" id="course_2">
+            </div>
+          </a>
+          <p class="text-wrapper">در این قسمت عنوان توضیحات قرار میگیرد</p>
+          <div class="text-wrapper-6">جلسه</div>
+          <div class="text-wrapper-7">زمان</div>
+          <div class="text-wrapper-8">مدرس</div>
+          <div class="frame-10">
+              <p class="price_of_course">رایگان</p>
+          </div>
+          <div class="frame-11">
+          <a href="./dore_html/html-css.html">
+            <p class="vorod_be_jalase">ورود به جلسه</p>
+          </a>
+          </div>
+          <div class="text-wrapper-5">دوره جامع css.html</div>
+        </div>
+        <div class="frame-13">
+          <a href="dore_ui-ux/ui-ux.html">
+            <div class="frame-9">
+              <img src="./img/ui_ux.jpeg" alt="html_css" class="frame-9" id="course_3">
+            </div>
+          </a>
+          <p class="text-wrapper">برای طراحی یک سایت و یک محصول زیبا و کار بردی شما یاد....</p>
+          <div class="text-wrapper-6">30جلسه</div>
+          <div class="text-wrapper-7">10ساعت</div>
+          <div class="text-wrapper-9">sid</div>
+          <div class="frame-10">
+            <p class="price_of_course">رایگان</p>
+          </div>
+          <div class="frame-11">
+            <a href="./dore_ui-ux/ui-ux.html">
+              <p class="vorod_be_jalase">ورود به جلسه</p>
+            </a>
+          </div>
+          <div class="text-wrapper-5">دوره جامع Ui.Ux</div>
+        </div>
+        <div class="frame-14">
+          <a href="dore_my-sql/my-sql.html">
+            <div class="frame-9">
+              <img src="./img/my_sql.png" alt="Php" class="frame-9" id="course">
+            </div>
+          </a>
+          <p class="text-wrapper">برای مدیرت داره ها و اطلاعات سایت شما میتونید از نرم افزار ....</p>
+          <div class="text-wrapper-10">4 جلسه</div>
+          <div class="text-wrapper-11">10ساعت</div>
+          <div class="text-wrapper-12">پارسا مدرس</div>
+          <div class="frame-10">
+            
+              <p class="price_of_course">رایگان</p>
+            
+          </div>
+          <div class="frame-11">
+          <a href="./dore_my-sql/my-sql.html">
+            <p class="vorod_be_jalase">ورود به جلسه</p>
+          </a>
+          </div>
+          <p class="vorod_be_jalase">ورود به جلسه</p>
+          <div class="text-wrapper-5">دوره جامع Mysql</div>
+        </div>
+        <div class="frame-15">
+          <a href="dore_react/react.html">
+            <div class="frame-9">
+              <img src="./img/react.png" alt="html_css" class="frame-9" id="course">
+            </div>
+          </a>
+          <p class="text-wrapper">در این قسمت عنوان توضیحات قرار میگیرد</p>
+          <div class="text-wrapper-6">جلسه</div>
+          <div class="text-wrapper-7">زمان</div>
+          <div class="text-wrapper-8">مدرس</div>
+          <div class="frame-10">
+            <p class="price_of_course">رایگان</p>
+          </div>
+          <div class="frame-11">
+            <a href="./dore_react/">
+              <p class="vorod_be_jalase">ورود به جلسه</p>
+            </a>
+          </div>
+          <div class="react-js">دوره جامعه  React.js</div>
+        </div>
+        <div class="frame-16">
+          <a href="dore_type/type.html">
+            <div class="frame-9">
+              <img src="./img/type.jpeg" alt="html_css" class="frame-9" id="course">
+            </div>
+          </a>
+          <p class="p">
+            <span class="span">تایپو گرافی چه </span>
+            <span class="text-wrapper-13">برای</span>
+            <span class="span"> سایت و برند و چه طراحی محصول میتوند....</span>
+          </p>
+          <div class="text-wrapper-6">30 جلسه</div>
+          <div class="text-wrapper-7">15ساعت</div>
+          <div class="text-wrapper-9">sid</div>
+          <div class="frame-10">
+              <p class="price_of_course">رایگان</p>
+          </div>
+          <div class="frame-11">
+            <a href="./dore_type/type.html">
+              <p class="vorod_be_jalase">ورود به جلسه</p>
+            </a>
+          </div>
+          <div class="text-wrapper-14">دوره جامع تایپو گرافی</div>
+        </div>
+        <div class="frame-17">
+          <a href="dore_php/php.html">
+            <div class="frame-9">
+              <img src="./img/php.jpeg" alt="Php" class="frame-9" id="course">
+            </div>
+          </a>
+          <p class="p">پی اچ پی که یکی ز قدیمی ترین و بهترن فرم ورک های بکند است که....</p>
+          <div class="text-wrapper-15">40جلسه</div>
+          <div class="text-wrapper-11">30ساعت</div>
+          <div class="text-wrapper-16">پارسامدرس</div>
+          <div class="frame-10">
+            <p class="price_of_course">رایگان</p>
+          </div>
+          <div class="frame-11">
+            <a href="./dore_php/php.html">
+            <p class="vorod_be_jalase">ورود به جلسه</p>
+          </a>
+          </div>
+          
+          
+          <div class="text-wrapper-5">دوره جامع Php</div>
+        </div>
+        <div class="frame-18">
+          <a href="dore_js/js.html">
+            <div class="frame-9">
+              <img src="./img/js.jpeg" alt="html_css" class="frame-9" id="course">
+            </div>
+          </a>
+          <p class="p">
+            <span class="span">در این قسمت </span> <span class="text-wrapper-13">عنوان توضیحات قرار میگیرد </span>
+          </p>
+          <div class="text-wrapper-6">جلسه</div>
+          <div class="text-wrapper-7">زمان</div>
+          <div class="text-wrapper-8">مدرس</div>
+          <div class="frame-10">
+            <p class="price_of_course">رایگان</p>
+          </div>
+          <div class="frame-11">
+            <a href="./dore_js/js.html">
+              <p class="vorod_be_jalase">ورود به جلسه</p>
+            </a>
+          </div>
+          <div class="text-wrapper-5">دوره جامع js</div>
+        </div>
+        <div class="frame-19">
+          <a href="dore_figma/figma.html">
+            <div class="frame-9">
+              <img src="./img/figma.jpeg" alt="html_css" class="frame-9" id="course">
+            </div>
+          </a>
+          <p class="text-wrapper">نرم افزار فیگما یکی از بهترین نرم افزار های عالی برای ....</p>
+          <div class="text-wrapper-6">20جلسه</div>
+          <div class="text-wrapper-7">5 ساعت</div>
+          <div class="text-wrapper-9">sid</div>
+          <div class="frame-10">
+            <p class="price_of_course">رایگان</p>
+          </div>
+          <div class="frame-11">
+            <a href="./dore_figma/figma.html">
+              <p class="vorod_be_jalase">ورود به جلسه</p>
+            </a>
+          </div>
+          <div class="text-wrapper-5">دوره جامع Figma</div>
+        </div>
+        <div class="frame-20">
+          <a href="dore_python/dore_python.html">
+            <div class="frame-21">
+              <img src="./img/python.jpg" alt="Python" class="frame-9" id="course">
+          </a>
+          </div>
+          <p class="p">پایتون یهترین زبان برای شروع و ورود به دنیای برنامه نویسی از....</p>
+          <div class="text-wrapper-17">100</div>
+          <div class="text-wrapper-7">60 ساعت</div>
+          <div class="text-wrapper-18">امیر مهمد اکبری مدرس</div>
+          <div class="frame-10">
+            <p class="price_of_course">رایگان</p>
+          </div>
+          <div class="frame-11">
+           <a href="./dore_python/dore_python.html">
+            <p class="vorod_be_jalase">ورود به جلسه</p>
+           </a>
+          </div>
+          <div class="text-wrapper-5">دوره جامع Python</div>
+        </div>
+        <div class="frame-22">
+          <a href="./dore_vue/vue.html">
+            <div class="frame-9">
+              <img src="./img/vue.png" alt="html_css" class="frame-9" id="course">
+            </div>
+          </a>
+          <p class="p">
+            <span class="span">در این قسمت </span> <span class="text-wrapper-13">عنوان توضیحات قرار میگیرد </span>
+          </p>
+          <div class="text-wrapper-6">جلسه</div>
+          <div class="text-wrapper-7">زمان</div>
+          <div class="text-wrapper-8">مدرس</div>
+          <div class="frame-10">
+            <p class="price_of_course">رایگان</p>
+          </div>
+          <div class="frame-11">
+            <a href="./dore_vue/vue.html">
+              <p class="vorod_be_jalase">ورود به جلسه</p>
+            </a>
+          </div>
+          <div class="text-wrapper-5">دوره جامع Vue.js</div>
+        </div>
+        <div class="frame-23">
+          <a href="dore_adobe/adobe.html">
+            <div class="frame-9">
+              <img src="./img/Adobe_Illustrator.jpeg" alt="Php" class="frame-9" id="course">
+            </div>
+          </a>
+          <p class="p">یکی از بهترین نرم افزار های شرکت ادوبی Illustrator یکی از....</p>
+          <div class="text-wrapper-6">40جلسه</div>
+          <div class="text-wrapper-7">20ساعت</div>
+          <div class="text-wrapper-9">sid</div>
+          <div class="frame-10">
+            <p class="price_of_course">رایگان</p>
+          </div>
+          <div class="frame-11">
+            <a href="./dore_adobe/adobe.html">
+              <p class="vorod_be_jalase">ورود به جلسه</p>
+            </a>
+          </div>
+          <div class="text-wrapper-19">دوره جامع Adobe Illustrator</div>
+        </div>
+        <!-- بخشه دوره ها اینجا تموم میشه -->
+<!-- __________________________________________ -->
+
+<!-- بخشه رزومه های مدرسین از اینجا شروع میشه -->
+      <div class="container_of_your_questions">
+        <div class="frame-32 box box_a" id="box1" onclick="toggleBox(1)" style="top: 4730px;">
+          <p class="user">کاربر 869:<br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, nulla.
+          </p>
+          <p class="user_said">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامهلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامهلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامهلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامهلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامهلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه
+          </p>
+        </div>
+        <div class="frame-32 box box_b" id="box2" onclick="toggleBox(2)" style="top: 4845px;">
+          <p class="user">کاربر 870:<br>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam, soluta!
+          </p>
+          <p class="user_said">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامهروزنامهروزنامهروزنامهروزنامه
+          </p>
+        </div>
+        <div class="frame-32 box box_c" id="box3" onclick="toggleBox(3)" style="top: 4960px;">
+          <p class="user">کاربر 871:<br>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, sapiente.
+          </p>
+          <p class="user_said">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه
+          </p>
+        </div>
+        <div class="frame-32 box box_d" id="box4" onclick="toggleBox(4)" style="top: 5075px;">
+          <p class="user">کاربر 872:<br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, soluta.
+          </p>
+          <p class="user_said">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه
+          </p>
+        </div>
+        <div class="frame-32 box box_e" id="box5" onclick="toggleBox(5)" style="top: 5190px;">
+          <p class="user">کاربر 873:<br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, numquam!
+          </p>
+          <p class="user_said">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه
+          </p>
+        </div>
+        <div class="frame-32 box box_f" id="box6" onclick="toggleBox(6)" style="top: 5305px;">
+          <p class="user">کاربر 874:<br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, numquam!
+          </p>
+          <p class="user_said">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+            روزنامه
+          </p>
+        </div>
+      </div>
+        <div class="frame-24">
+          <div class="frame-25">
+            <img src="./slide_show_images/" alt="sid" class="frame-25">
+          </div>
+          <div class="text-wrapper-20">sid</div>
+          <button class="frame-26">رزومه<button>
+        </div>
+        <div class="frame-27">
+          <div class="frame-25">
+            <img src="./slide_show_images/" alt="akbar" class="frame-25">
+          </div>
+          <div class="text-wrapper-21">اکبر</div>
+          <button class="frame-28">رزومه</button>
+        </div>
+        <div class="frame-29">
+          <div class="frame-25">
+            <img src="./slide_show_images/" alt="mani" class="frame-25">
+          </div>
+          <div class="text-wrapper-22">مانی</div>
+          <button class="frame-30">رزومه</button>
+        </div>
+        <div class="frame-31">
+          <div class="frame-25">
+            <img src="./slide_show_images/" alt="parsa" class="frame-25">
+          </div>
+          <div class="text-wrapper-23">پارسا</div>
+          <button class="frame-30">رزومه</button>
+        </div>
+<!-- بخشه رزومه های مدرسین اینجا تموم میشه -->
+
+<!-- ________________________________________ -->
+
+
+<!-- از اینجا بخشه سوالات شما شرووع میشه -->
+
+<!-- اینجا تموم میشه -->
+
+<!-- _____________________________________________ -->
+<!-- از اینجا بخشه مطالب شروع میشه -->
+<!-- <a href="matlab/matlab.html">-->
+<!--  <div class="frame-38" >-->
+<!--    <a href="matlab/matlab.html">-->
+<!--      <img src="./img/programing_ways.jpg" alt="akbar" class="frame-39">-->
+<!--    </a>-->
+<!--  <div class="text-wrapper-24">چگونه آموزش ببینیم</div>-->
+<!--  <div class="text-wrapper-25">خلاصه مطلب</div>-->
+<!--  <a href="matlab/matlab.html">-->
+<!--    <button class="frame-40">خواندن</button>-->
+<!--  </a>-->
+<!--  </div>-->
+<!-- </a>-->
+<!--<a href="./matlab/matlab.html">-->
+<!--  <div class="frame-41">-->
+<!--    <a href="matlab/matlab.html">-->
+<!--      <img class="img" src="./img/blog_1.jpg" />-->
+<!--    </a>-->
+<!--    <div class="text-wrapper-26">عنوان مطلب</div>-->
+<!--    <div class="text-wrapper-27">خلاصه مطلب</div>-->
+<!--    <a href="matlab/matlab.html">-->
+<!--      <button class="frame-40">خواندن</button>-->
+<!--    </a>-->
+<!--  </div>-->
+<!--</a>-->
+<!--<a href="./matlab/matlab.html">-->
+<!--  <div class="frame-42" >-->
+<!--    <a href="matlab/matlab.html">-->
+<!--      <img class="img" src="./img/programing_ways.jpg" alt="">-->
+<!--    </a>-->
+<!--    &lt;!&ndash; <div class="frame-39"></div> &ndash;&gt;-->
+<!--    <div class="text-wrapper-26">عنوان مطلب</div>-->
+<!--    <div class="text-wrapper-27">خلاصه مطلب</div>-->
+<!--    <a href="matlab/matlab.html">-->
+<!--      <button class="frame-40">خواندن</button>-->
+<!--    </a>-->
+<!--    </div>-->
+<!--</a>-->
+
+
+        <div class="text-wrapper-28">بکند</div>
+        <div class="text-wrapper-29">فرانت</div>
+        <div class="text-wrapper-30">گرافیک</div>
+        <div class="text-wrapper-31">صفحه ی پروفایل مدرسین</div>
+<!-- اینجا تموم میشه -->
+
+
+<!-- از اینجا هدر شروع میشه -->
+<!--آیکون-->
+      <header>
+        <div class="frame-43">
+          <div class="overlap-group">
+            <div class="frame-44"></div>
+            <div class="frame-45"></div>
+            <div class="frame-46"></div>
+          </div>
+
+
+          <!-- _______________________________________________ -->
+
+
+          <div class="overlap">
+            <div class="navbar">
+              <div class="text-wrapper-32">مدرسین</div>
+              <div class="text-wrapper-32">درباره ما</div>
+              <div class="text-wrapper-32">وبلاگ</div>
+              <div class="text-wrapper-32">دوره ها</div>
+              <div class="text-wrapper-32">خانه</div>
+              <input type="search" class="search_bar" name="" id="" placeholder="search">
+              <button class="vorod"></button>
+              <a href="{% url 'login' %}"><button class="sabte_nam"> ورود / ثبت نام</button></a>
+            </div>
+          </div>
+          <div class="text-wrapper-33">با Rcod یاد بگیر</div>
+          <p class="text-wrapper-34">
+            گروه DODO برای رسیدن یه شوعار یاد گیری برای همین در تلاش هست تا بهترن اموزش ها رو به علاقه مندان در حوضه های
+            برنامه نویسی و گرافیک اراعه بدهد .
+          </p>
+          <!--تمام شدن هدر-->
+        </div>
+      </header>
+
+
+        <div class="text-wrapper-35">سوالات شما</div>
+      </div>
+    </div>
+<!-- اینجا تموم میشه -->
+    
+<!--______________________________________________________________________ -->
+
+
+{% endblock %}
